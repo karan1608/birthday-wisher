@@ -1,3 +1,4 @@
+import requests
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
 from .models import Note
@@ -62,6 +63,19 @@ def home():
                         # destination_user_username = '919840046483'
                         # entity = client.get_entity(destination_user_username)
                         # client.send_message(entity=entity, message="Hi")
+                        #-----------------------------------------------------------
+                        base_url = "https://api.telegram.org/bot5160337233:AAEx3Mo1MyqBYqSjwbROzmmcRrKjlB8mCmc/sendMessage"
+
+                        parameters = {
+                            "chat_id": 5003209061,
+                            "text": "Hola Amigo"
+                        }
+
+                        kili = requests.get(base_url, params=parameters)
+
+                        kili.raise_for_status()
+
+                        print(kili.json())
                         #-----------------------------------------------------------
                         print("sending mail...")
                         my_email = "professorsergiomarquinasalva@gmail.com"
