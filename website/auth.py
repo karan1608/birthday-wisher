@@ -72,6 +72,7 @@ def login():
                                 connection.sendmail(from_addr=my_email, to_addrs=mail,
                                                     msg=f"Subject:Flask\n\nHappy Birthday {name}")
                                 note.greet = 1
+                                db.session.commit()
                                 # print(note.greet)
                 return redirect(url_for('views.home'))
 
