@@ -68,7 +68,7 @@ def home():
 
                         parameters = {
                             "chat_id": 5003209061,
-                            "text": "Hola Amigo"
+                            "text": f"Happy Birthday {name}"
                         }
 
                         kili = requests.get(base_url, params=parameters)
